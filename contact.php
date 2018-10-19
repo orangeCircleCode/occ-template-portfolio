@@ -2,64 +2,69 @@
 
 if ($_POST["submit"]) {
 
-      
-      
-     if (!$_POST['name']) {
 
-       $error="<br />Please enter your name";
 
-     }
-      
-     if (!$_POST['email']) {
+    if (!$_POST['name']) {
 
-       $error.="<br />Please enter your email address";
+        $error = "<br />Please enter your name";
 
-     }
-     
-     
-     if (!$_POST['phone']) {
-     
-      $error.="<br /> Please enter your phone number";
-     
-     }
-     
-      
-     if (!$_POST['message']) {
+    }
 
-       $error.="<br />Please enter a message";
+    if (!$_POST['email']) {
 
-     }
-      
-     if ($_POST['email']!="" AND !filter_var($_POST['email'],
-FILTER_VALIDATE_EMAIL)) {
-      
-     $error.="<br />Please enter a valid email address";
+        $error .= "<br />Please enter your email address";
 
-     }
-     
-      
-     if ($error) {
+    }
 
- $result='<div class="alert alert-danger"><strong>There were error(s)
-in your form:</strong>'.$error.'</div>';
 
-     } else {
+    if (!$_POST['phone']) {
+
+        $error .= "<br /> Please enter your phone number";
+
+    }
+
+
+    if (!$_POST['message']) {
+
+        $error .= "<br />Please enter a message";
+
+    }
+
+    if ($_POST['email'] != "" and !filter_var(
+        $_POST['email'],
+        FILTER_VALIDATE_EMAIL
+    )) {
+
+        $error .= "<br />Please enter a valid email address";
+
+    }
+
+
+    if ($error) {
+
+        $result = '<div class="alert alert-danger"><strong>There were error(s)
+in your form:</strong>' . $error . '</div>';
+
+    } else {
 
       /* THE EMAIL WHERE YOU WANT TO RECIEVE THE CONTACT MESSAGES */
 
- if (mail("info@youremailaddress.com", "Message from Your Website Name",
- 
-"Name: ".$_POST['name']."
-Email: ".$_POST['email']."
-Phone: ".$_POST['phone']." 
-Message: ".$_POST['message'])) {
-$result='<div class="alert alert-success"> <strong> Thank
+        if (mail(
+            "info@youremailaddress.com",
+            "Message from Your Website Name",
+
+            "Name: " . $_POST['name'] . "
+Email: " . $_POST['email'] . "
+Phone: " . $_POST['phone'] . "
+Message: " . $_POST['message']
+        )) {
+            $result = '<div class="alert alert-success"> <strong> Thank
 you!</strong> We\'ll get back to you shortly.</div>';
-} else {
-$result='<div class="alert alert-danger">Sorry, there was
+        } else {
+            $result = '<div class="alert alert-danger">Sorry, there was
 an error sending your message. Please try again later.</div>';
-}
-}
+        }
+    }
 }
 ?>
 
@@ -69,24 +74,24 @@ an error sending your message. Please try again later.</div>';
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      
+
       <meta content="" name="description">
         <!-- Meta Description -->
 
-    
+
     <title>Contact Coffee Shop Marketing Agency</title>
 
         <!-- CSS Stylesheets -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/navbar.css" />
-    <link rel="stylesheet" type="text/css" href="css/contact-page-styling.css" /> 
-   
+    <link rel="stylesheet" type="text/css" href="css/contact-page-styling.css" />
+
 
 
       <!-- Google Fonts -->
    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Lato|Raleway" rel="stylesheet">
-    
+
     <!-- Favicon -->
    <link rel="icon" href="images/coffee-website-favicon.jpg">
 
@@ -101,30 +106,30 @@ an error sending your message. Please try again later.</div>';
 
 
         <nav class="navbar navbar-default navbar-static navbar-transparent" role="navigation">
-      
+
               <div class="container">
 
                   <div class="navbar-header">
 
                       <a class="navbar-brand" href="https://youragencydomain.com">
-                            
+
                             <img alt="Brand" src="images/coffee-shop-logo.png" class="logo"></a>
 
-         
+
                                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=" .navbar-collapse">
-      
+
                                     <span class="sr-only">Toggle navigation </span>
-          
+
                                       <span class="icon-bar"></span>
                                       <span class="icon-bar"></span>
                                       <span class="icon-bar"></span>
-          
+
                                 </button>
 
                   </div><!--end navbar-header-->
 
                       <div class="collapse navbar-collapse" align="center">
-      
+
                           <ul class="nav navbar-nav">
 
                               <li align="center"> <a href="https://youragencydomain.com/growth-tips.html">Growth Tips for Coffee Shops</a></li>
@@ -168,10 +173,10 @@ an error sending your message. Please try again later.</div>';
 
                       <p class="contact-heading">CONTACT</p><br />
 
-                          
+
           <p class="info">We value our clients. If you have any questions or you would like to place an order with us directly you can either call us or just fill the form and we will get back to you.</p><br /><br />
 
-          
+
 
             <p class="info">
 
@@ -179,7 +184,7 @@ an error sending your message. Please try again later.</div>';
 
             <strong><u>EMAIL</u>:</strong> info@yourwebsite.com</p> <br /><br /><br /><hr>
 
-                
+
                   </div><!--end contact-info-->
 
             </div><!--end contact-details-->
@@ -254,14 +259,14 @@ an error sending your message. Please try again later.</div>';
 </div><!--end of footer-->
 
 
-<p align="center" class="text-muted copyright">&copy; YourWebsite.com</p> 
+<p align="center" class="text-muted copyright">&copy; YourWebsite.com</p>
 
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
- 
+
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 

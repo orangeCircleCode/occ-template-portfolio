@@ -2,58 +2,63 @@
 
 if ($_POST["submit"]) {
 
-      
-      
-     if (!$_POST['name']) {
 
-       $error="<br />Please enter your name";
 
-     }
-      
-     if (!$_POST['email']) {
+  if (!$_POST['name']) {
 
-       $error.="<br />Please enter your email address";
+    $error = "<br />Please enter your name";
 
-     }
-     
-      
-     if (!$_POST['message']) {
+  }
 
-       $error.="<br />Please enter a message";
+  if (!$_POST['email']) {
 
-     }
-      
-     if ($_POST['email']!="" AND !filter_var($_POST['email'],
-FILTER_VALIDATE_EMAIL)) {
-      
-     $error.="<br />Please enter a valid email address";
+    $error .= "<br />Please enter your email address";
 
-     }
-     
-      
-     if ($error) {
+  }
 
- $result='<div class="alert alert-danger"><strong>There were error(s)
-in your form:</strong>'.$error.'</div>';
 
-     } else {
+  if (!$_POST['message']) {
+
+    $error .= "<br />Please enter a message";
+
+  }
+
+  if ($_POST['email'] != "" and !filter_var(
+    $_POST['email'],
+    FILTER_VALIDATE_EMAIL
+  )) {
+
+    $error .= "<br />Please enter a valid email address";
+
+  }
+
+
+  if ($error) {
+
+    $result = '<div class="alert alert-danger"><strong>There were error(s)
+in your form:</strong>' . $error . '</div>';
+
+  } else {
 
 
       /* THE EMAIL WHERE YOU WANT TO RECIEVE THE CONTACT MESSAGES */
- if (mail("info@youremailaddress.com", "Message from Your Website Name",
+    if (mail(
+      "info@youremailaddress.com",
+      "Message from Your Website Name",
 
 
- 
-"Name: ".$_POST['name']."
-Phone: ".$_POST['phone']." 
-Message: ".$_POST['message'])) {
-$result='<div class="alert alert-success"> <strong> Thank
+
+      "Name: " . $_POST['name'] . "
+Phone: " . $_POST['phone'] . "
+Message: " . $_POST['message']
+    )) {
+      $result = '<div class="alert alert-success"> <strong> Thank
 you!</strong> We\'ll get back to you shortly.</div>';
-} else {
-$result='<div class="alert alert-danger">Sorry, there was
+    } else {
+      $result = '<div class="alert alert-danger">Sorry, there was
 an error sending your message. Please try again later.</div>';
-}
-}
+    }
+  }
 }
 ?>
 
@@ -66,8 +71,8 @@ an error sending your message. Please try again later.</div>';
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Coffee shop growth: websites, SEO, social media and online marketing."/>
-    
-    
+
+
     <title>Coffee Shop Growth: Websites, SEO and More</title>
 
        <!-- CSS Stylesheets -->
@@ -79,10 +84,10 @@ an error sending your message. Please try again later.</div>';
   <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Lato|Raleway" rel="stylesheet">
-    
+
   <!-- Favicon -->
    <link rel="icon" href="images/coffee-website-favicon.jpg">
-   
+
 
   </head>
 
@@ -90,9 +95,9 @@ an error sending your message. Please try again later.</div>';
 
 
  <div class="topbanner">
-  
+
    <nav class="navbar navbar-default navbar-static navbar-transparent" role="navigation">
-      
+
       <div class="container">
 
         <div class="navbar-header">
@@ -100,34 +105,34 @@ an error sending your message. Please try again later.</div>';
         <a class="navbar-brand" href="https://youragencydomain.com">
         <img alt="Brand" src="images/coffee-shop-logo.png" class="logo"></a>
 
-         
+
                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=" .navbar-collapse">
-      
+
                         <span class="sr-only">Toggle navigation </span>
-          
+
                           <span class="icon-bar"></span>
                           <span class="icon-bar"></span>
                           <span class="icon-bar"></span>
-          
+
                 </button>
 
-                 
-        
+
+
         </div><!--end navbar-header-->
 
 
-      
+
           <div class="collapse navbar-collapse" align="center">
-      
+
                    <ul class="nav navbar-nav">
 
                     <li align="center"> <a href="https://youragencydomain.com/growth-tips.html">Growth Tips for Coffee Shops</a></li>
 
                     <li align="center"> <a href="https://youragencydomain.com/contact.php">Contact</a></li>
-              
-          
+
+
               </ul>
-          
+
           </div><!--end navbar-collapse-->
 
       </div>
@@ -180,7 +185,7 @@ an error sending your message. Please try again later.</div>';
 </div><!--- /#grow-business-->
 
 
-<div class="growsales"> 
+<div class="growsales">
 
         <p align="center">Make great coffee while I take care of your online presence!</p>
 
@@ -210,7 +215,7 @@ an error sending your message. Please try again later.</div>';
                     <img src="images/seo-for-coffee-shop.jpg" alt="seo-for-coffee-shop-websites" class="img-responsive">
 
                         <h2>SEO</h2>
-                          
+
                           <p>Text about SEO goes here</p>
 
               </div>
@@ -233,7 +238,7 @@ an error sending your message. Please try again later.</div>';
 
 
 
-<div class="testimonials"> 
+<div class="testimonials">
 
     <h4 align="center">Client Testimonials</h4>
 
@@ -319,20 +324,20 @@ an error sending your message. Please try again later.</div>';
 
 
         <form method="post"><br />
-      
+
 
             <div align="center" class="form-group center-block">
-              
+
                    <input type="text" name="name" class="form-control" placeholder="Name" value="<?php echo $_POST['name']; ?>" />
-                   
-             
+
+
            </div>
 
             <div align="center" class="form-group center-block">
-               
+
                       <input type="email" name="email" class="form-control" placeholder="Email" value="<?php echo $_POST['email']; ?>" />
-                      
-                
+
+
             </div>
 
 
@@ -342,7 +347,7 @@ an error sending your message. Please try again later.</div>';
                 <textarea class="form-control" name="message"><?php echo $_POST['message']; ?> </textarea><br /> <br />
 
             </div>
-                    
+
                     <br>
 
                     <p align="center" ><input type="submit" name="submit" class="btn btn-success btn-lg submit" value="Request a Quote" /> </p><br />
@@ -350,7 +355,7 @@ an error sending your message. Please try again later.</div>';
           </form> <!--- /form-->
 
       </div><!--- /.col-md-->
-    
+
     </div><!--- /.row-->
 
 
@@ -358,18 +363,18 @@ an error sending your message. Please try again later.</div>';
 
           <div class="col-md-6 col-md-offset-3"> <br />
             <p class="havewebsite" align="center">If you already have an existing website and <br />you'd like to see how I can help you, <a href="https://youragencydomain.com/growth-tips.html">click here</a></p>
-            
+
             <br>
 
-          </div> <!--- /.col-md--> 
+          </div> <!--- /.col-md-->
 
-        </div>  <!--- /.row-->  
-    
+        </div>  <!--- /.row-->
+
     </div><!--- /.container--><br><br><br>
- 
+
 </div><!--- /.request-quote-->
 
-        
+
         <div class="social-links" align="center">
 
             <a href="https://www.linkedin.com/"><svg  width="35" height="35" viewBox="0 0 24 24">
@@ -397,14 +402,14 @@ an error sending your message. Please try again later.</div>';
 
 </div><!--end of footer-->
 
-<p align="center" class="text-muted copyright">&copy; YourWebsite.com</p> 
+<p align="center" class="text-muted copyright">&copy; YourWebsite.com</p>
 
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
- 
+
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 
